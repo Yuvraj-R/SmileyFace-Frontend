@@ -1,5 +1,14 @@
+:root {
+  --bg-color: rgb(16, 20, 24);
+  --primary-color: rgb(232, 209, 82);
+  --sidebar-width: 16%;
+}
+
+
 .App {
   text-align: center;
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  margin: 0; /* Remove any default margin */
 }
 
 /* NAVBAR STYLING */
@@ -16,7 +25,10 @@ header {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   height: 75%;
-  
+}
+
+.pages{
+  min-height: 90vh;
 }
 
 /* SIGN IN FORM STYLING */
@@ -34,7 +46,8 @@ header {
 }
 
 .form-header-wrapper{
-  background-color: rgb(51, 118, 232);
+  /* background-color: rgb(51, 118, 232); */
+  background-color: var(--primary-color);
   text-align: left;
   padding: 3%;
 }
@@ -43,7 +56,7 @@ header {
   margin-block-end: 0px;
   margin-block-start: 0px;
   margin-left: 1%;
-  color: white;
+  color: black;
 }
 
 .form-body{
@@ -53,6 +66,7 @@ header {
 .signin-input{
   display: grid;
   margin-bottom: 6%;
+  color: var(--primary-color);
 }
 
 .signin-input label {
@@ -89,7 +103,7 @@ header {
   text-align: left;
   text-decoration: none;
   font-size: 85%;
-  color: rgb(51, 118, 232);
+  color: var(--primary-color);
 }
 
 .form-submit {
@@ -99,25 +113,67 @@ header {
 }
 
 .form-submit button {
-  color: white;
-  background: rgb(51, 118, 232);
-  border: 3px solid rgb(51, 118, 232);
+  color: black;
+  background: var(--primary-color);
+  border: 3px solid var(--primary-color);
   border-radius: 2px;
   padding: 2% 3%;
+  font-weight: bold;
 }
 
 .form-redirect {
   margin-top: 5%;
   text-align: left;
   text-decoration: none;
-
-}
-
-.form-redirect p{
-  margin: 0px;
 }
 
 .form-redirect a {
   text-decoration: none;
-  color: rgb(51, 118, 232);
+  color: var(--primary-color);
+}
+
+.home-page-wrapper {
+  display: flex;
+}
+
+.home-sidebar {
+  flex: 0 0 var(--sidebar-width); /* Set the left column to take up 18% of the available space */
+  /* background-color: rgb(25, 25, 32); */
+  background-color: var(--bg-color);
+  border-color: rgba(194, 224, 255, 0.08) rgba(194, 224, 255, 0.08);
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  height: 90vh;
+}
+
+.home-content-wrapper {
+  width: 100%;
+  margin-right: var(--sidebar-width);
+  margin-left: calc(var(--sidebar-width) * 0.5);
+}
+
+.home-content {
+  flex: 1; /* Set the right column to take up the remaining space */
+  padding: 20px; /* Add padding for content */
+  flex-direction: column;
+  color: rgb(243, 246, 249);
+}
+
+.home-header-wrapper {
+  display: flex;
+  align-items: left;
+}
+
+.home-image-selector {
+  margin-top: 2%;
+}
+
+/* IMAGE SELECT */
+
+.image-select svg {
+  fill: var(--primary-color);
+}
+
+.image-select fieldset {
+  border: none;
 }

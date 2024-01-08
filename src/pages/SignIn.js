@@ -71,7 +71,9 @@ export default function SignIn({ isSignedIn, setIsSignedIn }) {
           </a>
         </div>
         <div className="form-submit">
-          <button type="submit">Sign In</button>
+          <button type="submit" style={{ cursor: "pointer" }}>
+            Sign In
+          </button>
         </div>
         <div className="form-redirect">
           <a className="form-redirect-button" href="/create-account">

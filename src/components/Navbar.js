@@ -16,7 +16,7 @@ export default function ButtonAppBar({ isSignedIn, onSignOut }) {
         <Toolbar>
           <Link to="/account/home" style={{ textDecoration: "none", color: "inherit" }}>
             {/* Replace the src attribute with the path to your icon image */}
-            <Avatar sx={{ marginRight: 1 }} src={require("../resources/favicon.ico")} />
+            <Avatar sx={{ marginRight: 1, marginLeft: -1 }} src={require("../resources/favicon.ico")} />
           </Link>
           <Typography
             className="navbar-name"
@@ -28,7 +28,15 @@ export default function ButtonAppBar({ isSignedIn, onSignOut }) {
             SmileyFace
           </Typography>
           {isSignedIn && (
-            <Button color="inherit" onClick={onSignOut}>
+            <Button
+              color="inherit"
+              onClick={onSignOut}
+              sx={{
+                ":hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
+            >
               Logout
             </Button>
           )}
