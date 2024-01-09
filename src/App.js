@@ -10,10 +10,12 @@ import { useEffect } from "react";
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(null);
+  const [email, setEmail] = useState(null);
 
   const handleSignOut = async (event) => {
     setIsSignedIn(false);
     Cookie.set("authenticationToken", "");
+    Cookie.set("email", "");
   };
 
   useEffect(() => {
@@ -61,9 +63,18 @@ function App() {
             <Route path="/create-account" element={<CreateAccount />} />
             <Route
               path="/sign-in"
-              element={<SignIn isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}
+              element={
+                <SignIn
+                  isSignedIn={isSignedIn}
+                  setIsSignedIn={setIsSignedIn}
+                  setEmailCallback={setEmail}
+                />
+              }
             />
-            <Route path="/account/home" element={<Home isSignedIn={isSignedIn} />} />
+            <Route
+              path="/account/home"
+              element={<Home isSignedIn={isSignedIn} email={email} onSignOut={handleSignOut} />}
+            />
 
             {/* Set a default route to redirect to /account/home */}
             <Route path="/" element={<Navigate to="/account/home" replace />} />

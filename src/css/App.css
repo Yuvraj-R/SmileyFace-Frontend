@@ -143,7 +143,7 @@ header {
   border-color: rgba(194, 224, 255, 0.08) rgba(194, 224, 255, 0.08);
   border-style: solid;
   border-width: 0 1px 1px 0;
-  height: 90vh;
+  min-height: 93vh;
 }
 
 .home-content-wrapper {
@@ -164,8 +164,15 @@ header {
   align-items: left;
 }
 
+.home-image-upload {
+  display: flex;
+  align-items: left;
+  margin-top: 2%;
+}
+
 .home-image-selector {
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 /* IMAGE SELECT */
@@ -176,4 +183,11 @@ header {
 
 .image-select fieldset {
   border: none;
+}
+
+/* IMAGE UPLOAD */
+.upload-image{
+  display: flex;
+  align-items: center;
+  gap: 5%;
 }

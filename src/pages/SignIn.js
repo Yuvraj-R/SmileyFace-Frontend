@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-export default function SignIn({ isSignedIn, setIsSignedIn }) {
+export default function SignIn({ isSignedIn, setIsSignedIn, setEmailCallback }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +17,7 @@ export default function SignIn({ isSignedIn, setIsSignedIn }) {
 
   const onEmailChange = (newEmail) => {
     setEmail(newEmail);
+    setEmailCallback(newEmail);
   };
 
   const onPasswordChange = (newPassword) => {
@@ -41,6 +42,7 @@ export default function SignIn({ isSignedIn, setIsSignedIn }) {
       const data = await response.json();
       console.log(data);
       Cookie.set("authenticationToken", data.token);
+      Cookie.set("email", email);
       setIsSignedIn(true);
       navigate("/account/home");
     } else {
