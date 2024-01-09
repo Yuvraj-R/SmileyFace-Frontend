@@ -17,6 +17,16 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
+const UploadButton = styled(Button)({
+  backgroundColor: "rgb(232, 209, 82)",
+  height: "5vh",
+  color: "black",
+  whiteSpace: "nowrap",
+  "&:hover": {
+    height: "5vh",
+  },
+});
+
 export default function ImageUpload({ email, onSignOut, fetchImages }) {
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
@@ -68,23 +78,18 @@ export default function ImageUpload({ email, onSignOut, fetchImages }) {
 
   return (
     <div className="upload-image">
-      <Button
-        component="label"
-        variant="contained"
-        sx={{ backgroundColor: "rgb(232, 209, 82)", color: "black" }}
-      >
+      <UploadButton component="label" variant="contained">
         Select An Image
         <VisuallyHiddenInput type="file" onChange={handleFileChange} />
-      </Button>
-      <Button
+      </UploadButton>
+      <UploadButton
         component="label"
         variant="contained"
         onClick={handleUpload}
-        sx={{ backgroundColor: "rgb(232, 209, 82)", color: "black" }}
         startIcon={<CloudUploadIcon />}
       >
         Upload Image
-      </Button>
+      </UploadButton>
       <p>{message}</p>
     </div>
   );
