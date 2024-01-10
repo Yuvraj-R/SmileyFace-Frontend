@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import ImageSelect from "../components/ImageSelect";
 import ImageUpload from "../components/ImageUpload";
+import "../css/Home.css";
 const Cookie = require("js-cookie");
 
 export default function Home({ isSignedIn, onSignOut }) {

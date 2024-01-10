@@ -3,6 +3,7 @@ import CredentialInput from "../components/CredentialInput";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import "../css/SignIn.css";
 
 export default function SignIn({ isSignedIn, setIsSignedIn, setEmailCallback }) {
   const navigate = useNavigate();

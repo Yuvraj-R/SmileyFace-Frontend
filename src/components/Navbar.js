@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
+import "../css/Navbar.css";
 
 export default function ButtonAppBar({ isSignedIn, onSignOut }) {
   return (
